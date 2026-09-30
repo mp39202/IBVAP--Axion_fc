@@ -1,0 +1,6 @@
+ultralytics
+opencv-python
+flask
+numpy
+rapidocr-onnxruntime
+paho-mqtt

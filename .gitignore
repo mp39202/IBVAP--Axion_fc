@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+ivap_data/
+demo_videos/*
+!demo_videos/README.md
+models/
+vendor/
+.env
+.env.*
+*.log
+*.db
+*.sqlite
+*.sqlite3
