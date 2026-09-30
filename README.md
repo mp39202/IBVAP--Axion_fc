@@ -2,6 +2,30 @@
 
 IBVAP runs as either a Windows desktop window or a browser-based command center. Both use the same local Python/YOLO backend and preserve the same features.
 
+## Project status
+
+```mermaid
+flowchart LR
+    subgraph NOW[Available in this build]
+        A[Live camera and video monitoring<br/>multi-camera, replay, webcam simulation]
+        B[AI analytics<br/>person and vehicle detection and tracking]
+        C[Events and evidence<br/>fences, intrusion, loitering, alerts]
+        D[ANPR<br/>raw OCR, voting, confirmed plates]
+        E[Operations<br/>dashboard, daily limits, rules, users]
+        F[Integrity<br/>evidence export and local hash-chain verification]
+    end
+    subgraph NEXT[Proposed future work]
+        G[Measure accuracy, alert delay and FPS<br/>on representative hardware and footage]
+        H[Improve reliability<br/>reconnects, diagnostics, offline setup]
+        I[Add night-movement and explainable<br/>behavior analytics, with validation]
+        J[Harden deployment<br/>secure secrets, backups and audit export]
+        K[Integrate with VMS / command systems<br/>after confirming target APIs]
+    end
+    NOW --> NEXT
+```
+
+Future items are proposals, not features currently included or delivery commitments. Facial recognition is not part of this build or its current roadmap.
+
 ## Run
 1. Install Python 3.9 to 3.12 from python.org (tick "Add to PATH" on Windows).
 2. On Windows, double-click **run_desktop.bat** to open the native WebView2 desktop window. The first run installs packages and downloads YOLO weights. Windows WebView2 Runtime is required.
@@ -62,8 +86,10 @@ This needs internet once. Later runs start in seconds.
 - Facial recognition and face enrollment are removed; any old enrolled face templates are deleted when this build starts.
 - Re-ID and plate thresholds are starting values. Tune them on your footage.
 
-## Publish to GitHub
-```
-git init && git add . && git commit -m "IVAP"
-git branch -M main && git remote add origin https://github.com/YOU/ivap.git && git push -u origin main
-```
+## Project status details
+
+**Available now:** live monitoring for camera and video sources; webcam and camera-health simulations; person and vehicle detection/tracking; multiple named fences; entry and loitering alerts with evidence; ANPR raw readings and confirmed-plate voting; dashboard totals and daily limits; rules, incidents, evidence export, user roles, multi-camera views, and local hash-chain verification. The integrity feature is a tamper-evident local ledger, not an external blockchain.
+
+**Proposed next updates:** benchmark accuracy, alert delay and actual AI FPS on representative PCs and footage; improve camera reconnects and setup diagnostics; validate night-movement and explainable behavior analytics; add offline deployment and operational hardening; and evaluate VMS/command-system integrations after their APIs and security needs are known. See `ROADMAP.md` for the proposed sequence.
+
+The old “Publish to GitHub” commands were for maintainers uploading a new repository. They are not needed to download or run IBVAP. For contributions, see `CONTRIBUTING.md`.
